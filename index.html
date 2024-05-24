@@ -11,6 +11,8 @@
   </head>
   <body>
     <header>
+      <div class="logo">E</div>
+      <!--Make sure to place logo here-->
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -25,29 +27,69 @@
     </header>
     <main class="wrapper">
       <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>
-          Hi, I'm Eleosnel Rincon, a Computer Science major with a passion for
-          C++ programming.
-        </p>
+        <div class="welcome-message">
+          <h1>Welcome</h1>
+          <p>
+            Hi, I'm Eleosnel Rincon, a Computer Science major with a passion for
+            C++ programming.
+          </p>
+          <div class="small-details">
+            <p>2nd Year Student</p>
+            <p>C++ Focused</p>
+            <p><a href="#about">More...</a></p>
+          </div>
+        </div>
+        <div class="welcome-image">
+          <img src="" alt="" srcset="" /> ,<!--Add welcome image here-->
+        </div>
       </section>
+      <!--Add a small line between sections-->
 
       <section id="about">
-        <h2>About Me</h2>
-        <p>
-          [Write a brief introduction about me, my background, and my
-          interests.]
-        </p>
+        <div class="about-image">
+          <img src="" alt="" srcset="" />
+        </div>
+        <div class="about-messages">
+          <h2>About Me</h2>
+          <p>
+            [Write a brief introduction about me, my background, and my
+            interests.]
+          </p>
+          <h3>Education</h3>
+          <ul>
+            <li>American River College: AS Computer Science present</li>
+          </ul>
+          <h3>Experience</h3>
+          <ul>
+            <li>American River College: Student Research Assistant</li>
+            <li>American River College: Summer Data Analysis</li>
+          </ul>
+        </div>
       </section>
 
       <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-          <h3>Project Title</h3>
-          <p>[Project description]</p>
-          <a href="[GitHub link]" target="_blank">View Code</a>
+        <div class="projects-message">
+          <h2>Projects</h2>
+
+          <h3>Class Projects</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+          <h3>Personal Projects</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
-        <!-- Add more projects as needed -->
+        <!--Make sure to include images and tiles for each proj below-->
+        <div class="projects-display">
+          <div class="class-proj">
+            <a href="">Class Proj 1</a>
+            <a href="">Class Proj 2</a>
+            <a href="">Class Proj 3</a>
+          </div>
+          <div class="personal-proj">
+            <a href="">Personal Proj 1</a>
+            <a href="">Personal Proj 2</a>
+            <a href="">Personal Proj 3</a>
+          </div>
+        </div>
       </section>
 
       <section id="skills">
