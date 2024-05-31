@@ -36,8 +36,7 @@ header {
 
 .logo > h1 {
   /* border: 1px solid green; */
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3),
-    0px -4px 10px rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
   margin: auto;
 }
 
@@ -70,9 +69,11 @@ header {
   color: #323232;
   text-decoration: none;
   font-size: 18px;
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3),
-    0px -4px 10px rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
+/* 
+  Hover effect for ^ .navbar-links a
+*/
 
 .toggle-button {
   display: none;
@@ -143,7 +144,7 @@ header {
 
 .small-details p {
   font-weight: 800;
-  /* border-left: 1px solid red; */
+  border-bottom: 1px solid #323232;
 }
 
 /* .small-details p:nth-child(2){
