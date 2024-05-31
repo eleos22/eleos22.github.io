@@ -1,0 +1,200 @@
+/* 
+  - Finish setting up drop down menu when active 5.30.24
+  - Figure out color scheme 5.30.24
+*/
+
+/* 
+  - Pastel purple and light steel blue
+  background-image: radial-gradient(circle, #c5adc5, #c3aecc, #bfb0d3, #b9b2d9, #b2b5e0);
+ */
+body {
+  background-color: #ddd0c8;
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 600;
+  color: #323232;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px 20px; */
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ddd0c8;
+  border-bottom: 1px solid aliceblue;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Adds a small shadow */
+}
+
+/* .logo{
+  border: 1px solid blue;
+} */
+
+.logo > h1 {
+  /* border: 1px solid green; */
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+  margin: auto;
+}
+
+.logo > h1 > a {
+  text-decoration: none;
+  color: #323232;
+  font-size: 3rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+
+  /* border: 1px solid red; */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  /* border: 1px solid white; */
+  margin: auto;
+  padding: 0%;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: #323232;
+  text-decoration: none;
+  font-size: 18px;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 21px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #323232;
+  border-radius: 10px;
+}
+
+/* 
+  Main ".wrapper" > 
+  - #home
+  - #about
+  - #...
+*/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  padding: 10px 30px;
+}
+
+/* 
+  #home 
+  - .welcome-messsage
+  - .welcome-image
+*/
+#home {
+  display: flex;
+  /* border: 1px solid blue; */
+  border-bottom: 1px solid aliceblue;
+  padding-bottom: 50px;
+}
+
+/* 
+  .welcome-message
+  - h1
+  - p
+  - .small-details
+
+*/
+
+/* #home .welcome-message {
+  border: 1px solid purple;
+} */
+
+/* 
+  .small-details 
+  - p
+  - p
+  - p
+  - p > a
+*/
+.welcome-message .small-details {
+  /* border-top: 1px solid black; */
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.small-details p {
+  font-weight: 800;
+  /* border-left: 1px solid red; */
+}
+
+/* .small-details p:nth-child(2){
+  border-left: 1px solid #323232;
+} */
+
+/* 
+  .welcome-image
+  - img
+*/
+#home .welcome-image {
+  margin: auto;
+  /* border: 1px solid green; */
+}
+
+/* Main > #about*/
+/* #about{
+  border: 1px solid red;
+} */
+
+@media (max-width: 795px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: #; Match the header background */
+    position: absolute;
+    top: 117px; /* Adjust based on your header height */
+    left: 0;
+    padding: 0;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center justify items */
+  }
+
+  .toggle-button {
+    display: flex;
+    margin-left: auto; /* Pushes the toggle button to the right */
+  }
+
+  .navbar-links li {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
