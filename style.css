@@ -19,17 +19,45 @@
 
   Dark Grey: #323232
   ------------------
-  
+  Test -
+  background: 8D99AE
+  accent: 
+
  */
+
+/* 
+  Body ----
+
+
+Header& main .Wrapper ----
+
+background: rgba(23, 89, 197, 0.29);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.8px);
+-webkit-backdrop-filter: blur(5.8px);
+border: 1px solid rgba(23, 89, 197, 0.17);
+
+
+
+*/
+
 :root {
+  /* Curent */
   --lighter-green-accent: #798777;
   --darker-green-accent: #4f6f52;
+
+  /* Test */
+  --backgroundTest: #f7f1e8;
+  --accentTest1: #fcfbf8;
+  --accentTest2: #e7efe8;
+  --accentTest3: #d2dad3;
 }
 body {
-  background-color: #eee7e1;
+  background-color: var(--backgroundTest);
   font-family: "Playfair Display", serif;
   font-weight: 600;
-  color: #323232;
+  color: #080808;
   margin: 0 auto;
   padding: 0;
   max-width: 1200px;
@@ -44,7 +72,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #eee7e1;
+  background-color: var(--accentTest3);
   border-bottom: 1px solid aliceblue;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
 }
@@ -61,8 +89,9 @@ header {
 
 .logo > h1 > a {
   text-decoration: none;
-  color: #323232;
+  color: var(--accentTest1);
   font-size: 3rem;
+  font-weight: 600;
 }
 
 .navbar {
@@ -86,9 +115,10 @@ header {
 
 .navbar-links a {
   /* color: #323232; */
-  color: var(--darker-green-accent);
+  color: var(--accentTest1);
   text-decoration: none;
   font-size: 18px;
+  font-weight: 200;
   position: relative;
   /* text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15); */
 }
@@ -142,8 +172,9 @@ header {
 .wrapper {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid red; */
-  padding: 10px 30px;
+  background-color: var(--accentTest2);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 /* 
@@ -173,17 +204,46 @@ header {
   /* border: 1px solid green; */
   max-height: 500px;
   /* for Margin: Keep left or center? */
-  /* margin: auto;    */
+  margin: auto;
 }
 
 .welcome-message h1 {
   color: var(--darker-green-accent);
+  font-weight: 100;
+  position: relative;
+  display: inline-block;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+.welcome-message h1::before {
+  content: "";
+  position: absolute;
+  border: 4px solid var(--backgroundTest);
+  width: 40%;
+  height: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.welcome-message h1::after {
+  content: "";
+  position: absolute;
+  border: 4px solid var(--backgroundTest);
+  width: 40%;
+  height: 100%;
+  /* border-top: none; */
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+
+  right: 0;
+}
 .welcome-message > p {
   /* border: 1px solid white; */
   max-width: 500px;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 /* .welcome-message .quote{
@@ -207,13 +267,16 @@ header {
 
 .small-details p {
   font-weight: 800;
+  color: #323232;
+  font-size: 18px;
+  font-weight: 600;
   /* width: 100px; */
   /* border: 1px solid red; */
 }
 
 .small-details p:nth-child(2),
 p:nth-child(4) {
-  border-left: 3px solid var(--darker-green-accent);
+  border-left: 4px solid var(--accentTest1);
 }
 
 /* 
@@ -230,6 +293,8 @@ p:nth-child(4) {
 .welcome-image img {
   /* border: 1px solid blue; */
   margin: auto;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .welcome-image::before,
