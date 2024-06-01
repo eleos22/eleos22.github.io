@@ -7,13 +7,32 @@
   - Pastel purple and light steel blue
   background-image: radial-gradient(circle, #c5adc5, #c3aecc, #bfb0d3, #b9b2d9, #b2b5e0);
  */
+
+/* 
+  Colors:
+  Beige: #F8EDE3
+  Greeny: #BDD2B6
+  Dark ligth green:#A2B29F
+  Darker green: #798777
+  ------------------
+  Beige: #EEE7E1
+
+  Dark Grey: #323232
+  ------------------
+  
+ */
+:root {
+  --lighter-green-accent: #798777;
+  --darker-green-accent: #4f6f52;
+}
 body {
-  background-color: #ddd0c8;
-  font-family: "Playfair Display", sans-serif;
+  background-color: #eee7e1;
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
   color: #323232;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 1200px;
 }
 
 header {
@@ -25,9 +44,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #ddd0c8;
+  background-color: #eee7e1;
   border-bottom: 1px solid aliceblue;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Adds a small shadow */
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* .logo{
@@ -66,14 +85,37 @@ header {
 }
 
 .navbar-links a {
-  color: #323232;
+  /* color: #323232; */
+  color: var(--darker-green-accent);
   text-decoration: none;
   font-size: 18px;
-  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  /* text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15); */
 }
 /* 
   Hover effect for ^ .navbar-links a
 */
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #333; /* Adjust color as needed */
+  transition: width 0.3s ease, right 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+  left: 0;
+}
 
 .toggle-button {
   display: none;
@@ -111,8 +153,10 @@ header {
 */
 #home {
   display: flex;
+  /* height: 500px; */
   /* border: 1px solid blue; */
   border-bottom: 1px solid aliceblue;
+  /* box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1); */
   padding-bottom: 50px;
 }
 
@@ -120,12 +164,30 @@ header {
   .welcome-message
   - h1
   - p
+  - quote
   - .small-details
 
 */
 
-/* #home .welcome-message {
-  border: 1px solid purple;
+#home .welcome-message {
+  /* border: 1px solid green; */
+  max-height: 500px;
+  /* for Margin: Keep left or center? */
+   /* margin: auto;    */
+}
+
+.welcome-message h1 {
+  color: var(--darker-green-accent);
+}
+
+.welcome-message > p{
+  /* border: 1px solid white; */
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* .welcome-message .quote{
+  border: 1px solid red;
 } */
 
 /* 
@@ -136,20 +198,24 @@ header {
   - p > a
 */
 .welcome-message .small-details {
-  /* border-top: 1px solid black; */
+  /* border: 1px solid black; */
   display: flex;
   justify-content: space-around;
   text-align: center;
+  margin: 50px 0px;
+  
 }
 
 .small-details p {
   font-weight: 800;
-  border-bottom: 1px solid #323232;
+  /* width: 100px; */
+  /* border: 1px solid red; */
 }
 
-/* .small-details p:nth-child(2){
-  border-left: 1px solid #323232;
-} */
+.small-details p:nth-child(2),
+p:nth-child(4){
+  border-left: 3px solid var(--darker-green-accent);
+}
 
 /* 
   .welcome-image
@@ -157,7 +223,38 @@ header {
 */
 #home .welcome-image {
   margin: auto;
-  /* border: 1px solid green; */
+  /* border: 1px solid purple; */
+  position: relative;
+  display: inline-block;
+}
+
+.welcome-image img {
+  /* border: 1px solid blue; */
+  margin: auto;
+}
+
+.welcome-image::before,
+.welcome-image::after {
+  content: "";
+  position: absolute;
+  /* border: 5px solid #A2B29F; */
+  border: 5px solid var(--lighter-green-accent);
+  width: 50%;
+  height: 50%;
+}
+
+.welcome-image::before {
+  top: -15px;
+  left: -15px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.welcome-image::after {
+  bottom: -10px;
+  right: -15px;
+  border-left: none;
+  border-top: none;
 }
 
 /* Main > #about*/
