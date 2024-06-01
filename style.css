@@ -27,7 +27,7 @@
 }
 body {
   background-color: #eee7e1;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   color: #323232;
   margin: 0 auto;
@@ -96,14 +96,14 @@ header {
   Hover effect for ^ .navbar-links a
 */
 .navbar-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
   display: block;
   margin-top: 5px;
   right: 0;
-  background: #333; /* Adjust color as needed */
+  background: var(--lighter-green-accent); /* Adjust color as needed */
   transition: width 0.3s ease, right 0.3s ease;
 }
 
@@ -173,14 +173,14 @@ header {
   /* border: 1px solid green; */
   max-height: 500px;
   /* for Margin: Keep left or center? */
-   /* margin: auto;    */
+  /* margin: auto;    */
 }
 
 .welcome-message h1 {
   color: var(--darker-green-accent);
 }
 
-.welcome-message > p{
+.welcome-message > p {
   /* border: 1px solid white; */
   max-width: 500px;
   line-height: 1.5;
@@ -203,7 +203,6 @@ header {
   justify-content: space-around;
   text-align: center;
   margin: 50px 0px;
-  
 }
 
 .small-details p {
@@ -213,7 +212,7 @@ header {
 }
 
 .small-details p:nth-child(2),
-p:nth-child(4){
+p:nth-child(4) {
   border-left: 3px solid var(--darker-green-accent);
 }
 
