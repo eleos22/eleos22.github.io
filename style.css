@@ -1,66 +1,49 @@
 /* 
-  - Finish setting up drop down menu when active 5.30.24
-  - Figure out color scheme 5.30.24
-*/
-
-/* 
-  - Pastel purple and light steel blue
-  background-image: radial-gradient(circle, #c5adc5, #c3aecc, #bfb0d3, #b9b2d9, #b2b5e0);
- */
-
-/* 
-  Colors:
-  Beige: #F8EDE3
-  Greeny: #BDD2B6
-  Dark ligth green:#A2B29F
-  Darker green: #798777
-  ------------------
-  Beige: #EEE7E1
-
-  Dark Grey: #323232
-  ------------------
-  Test -
-  background: 8D99AE
-  accent: 
-
- */
-
-/* 
-  Body ----
-
-
-Header& main .Wrapper ----
-
-background: rgba(23, 89, 197, 0.29);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5.8px);
--webkit-backdrop-filter: blur(5.8px);
-border: 1px solid rgba(23, 89, 197, 0.17);
-
-
+  NOTES:
 
 */
 
 :root {
-  /* Curent */
-  --lighter-green-accent: #798777;
-  --darker-green-accent: #4f6f52;
+  /* Site colors */
+  /* body background*/
+  --body-background-color: #bfdcee;
 
-  /* Test */
-  --backgroundTest: #f7f1e8;
-  --accentTest1: #fcfbf8;
-  --accentTest2: #e7efe8;
-  --accentTest3: #d2dad3;
+  /* header background */
+  --header-background-color: #4682a9;
+
+  /* wrapper background */
+  --Wrapper-background-color: #aedefc;
+
+  /* darker grey*/
+  --dark-grey: #333333;
+
+  /* light grey accent */
+  --light-grey: #b1b0b0;
+
+  /* lighter grey */
+  --lighter-grey: #b2b2b2;
+
+  /* White color used */
+  --white-color: #f6f6f6;
+
+  --accent1: #;
+  --accent2: #fff;
+  --accent3: #fff;
 }
 body {
-  background-color: var(--backgroundTest);
+  /* background-color: var(--backgroundTest); */
+  background-color: var(--body-background-color);
   font-family: "Playfair Display", serif;
   font-weight: 600;
   color: #080808;
   margin: 0 auto;
   padding: 0;
   max-width: 1200px;
+  border-radius: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  /* border: 1px solid rgb(123, 122, 122); */
 }
 
 header {
@@ -72,10 +55,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--accentTest3);
+  /* background-color: var(--accentTest3); */
+  background-color: var(--header-background-color);
   border-bottom: 1px solid aliceblue;
   /* box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1); */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgba(0, 0, 0, 0.23) 0px 1px 6px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 /* .logo{
@@ -90,7 +76,7 @@ header {
 
 .logo > h1 > a {
   text-decoration: none;
-  color: var(--accentTest1);
+  color: var(--white-color);
   font-size: 3rem;
   font-weight: 600;
 }
@@ -115,8 +101,7 @@ header {
 }
 
 .navbar-links a {
-  /* color: #323232; */
-  color: var(--accentTest1);
+  color: var(--white-color);
   text-decoration: none;
   font-size: 18px;
   font-weight: 200;
@@ -134,7 +119,7 @@ header {
   display: block;
   margin-top: 5px;
   right: 0;
-  background: var(--lighter-green-accent); /* Adjust color as needed */
+  background: var(--lighter-grey);
   transition: width 0.3s ease, right 0.3s ease;
 }
 
@@ -160,7 +145,8 @@ header {
 .toggle-button .bar {
   height: 3px;
   width: 100%;
-  background-color: var(--darker-green-accent);
+
+  background-color: var(--white-color);
   border-radius: 10px;
 }
 
@@ -173,8 +159,8 @@ header {
 .wrapper {
   display: flex;
   flex-direction: column;
-  background-color: var(--accentTest2);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: var(--Wrapper-background-color);
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
 
 /* 
@@ -185,7 +171,7 @@ header {
 #home {
   display: flex;
   /* height: 500px; */
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   border-bottom: 1px solid aliceblue;
   /* box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1); */
   /* padding-bottom: 50px; */
@@ -209,18 +195,20 @@ header {
 }
 
 .welcome-message h1 {
-  color: var(--darker-green-accent);
+  color: var(--white-color);
   font-weight: 100;
   font-size: 2rem;
+  font-weight: 400;
   position: relative;
   display: inline-block;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 2px 2px rgba(105, 105, 105, 0.3);
 }
 
 .welcome-message h1::before {
   content: "";
   position: absolute;
-  border: 4px solid var(--backgroundTest);
+  /* border: 4px solid #b1b0b0; */
+  border: 4px solid var(--light-grey);
   width: 40%;
   height: 100%;
   border-top: none;
@@ -231,7 +219,7 @@ header {
 .welcome-message h1::after {
   content: "";
   position: absolute;
-  border: 4px solid var(--backgroundTest);
+  border: 4px solid var(--light-grey);
   width: 40%;
   height: 100%;
   /* border-top: none; */
@@ -269,7 +257,7 @@ header {
 
 .small-details p {
   font-weight: 800;
-  color: #323232;
+  color: var(--dark-grey);
   font-size: 18px;
   font-weight: 600;
   /* width: 100px; */
@@ -278,7 +266,7 @@ header {
 
 .small-details p:nth-child(2),
 p:nth-child(4) {
-  border-left: 4px solid var(--accentTest1);
+  border-left: 4px solid #f6f6f6;
 }
 
 /* 
@@ -304,7 +292,7 @@ p:nth-child(4) {
   content: "";
   position: absolute;
   /* border: 5px solid #A2B29F; */
-  border: 5px solid var(--lighter-green-accent);
+  border: 5px solid var(--light-grey);
   width: 50%;
   height: 50%;
 }
@@ -337,7 +325,7 @@ p:nth-child(4) {
   .navbar-links {
     display: none;
     flex-direction: column;
-    background-color: var(--lighter-green-accent);
+    background-color: var(--header-background-color);
     width: 100%;
     /* background-color: #; Match the header background */
     position: absolute;
