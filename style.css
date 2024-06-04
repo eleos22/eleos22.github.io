@@ -106,7 +106,7 @@ header {
   font-size: 18px;
   font-weight: 200;
   position: relative;
-  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15);
+  text-shadow: 2px 3px 3px rgba(125, 124, 124, 0.15);
 }
 /* 
   Hover effect for ^ .navbar-links a
@@ -191,7 +191,7 @@ header {
   margin: auto;
 }
 
-.welcome-message h1 {
+.section-title {
   color: var(--white-color);
   font-weight: 100;
   font-size: 2.25rem;
@@ -201,7 +201,7 @@ header {
   text-shadow: 1px 2px 2px rgba(105, 105, 105, 0.3);
 }
 
-.welcome-message h1::before {
+.section-title::before {
   content: "";
   position: absolute;
   border: 4px solid var(--light-grey);
@@ -212,7 +212,7 @@ header {
   border-right: none;
 }
 
-.welcome-message h1::after {
+.section-title::after {
   content: "";
   position: absolute;
   border: 4px solid var(--light-grey);
@@ -224,11 +224,20 @@ header {
 
   right: 0;
 }
-.welcome-message > p {
-  /* border: 1px solid white; */
+/* .welcome-message > p {
+  border: 1px solid white;
   max-width: 500px;
   line-height: 1.6;
   font-weight: 400;
+} */
+
+/* This will set the paragraphs of each section message */
+.message-paragraphs {
+  max-width: 500px;
+  line-height: 1.6;
+  font-weight: 400;
+  /* color: #121212; */
+  /* border: 1px solid green; */
 }
 
 /* .welcome-message .quote{
@@ -270,16 +279,19 @@ p:nth-child(4) {
 */
 #home .welcome-image {
   margin: auto;
-  /* border: 1px solid purple; */
   position: relative;
   display: inline-block;
+  /* border: 1px solid black; */
 }
 
 .welcome-image img {
   /* border: 1px solid blue; */
   margin: auto;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  width: 200px;
+  border-radius: 2px;
 }
 
 .welcome-image::before,
@@ -306,12 +318,95 @@ p:nth-child(4) {
   border-top: none;
 }
 
-/* Main > #about*/
-/* #about{
-  border: 1px solid red;
+/* #about
+    > .about-img-and-socials
+    > .about-message
+*/
+#about {
+  /* border: 1px solid red; */
+  display: flex;
+  border-bottom: 1px solid aliceblue;
+  justify-content: space-around;
+}
+
+.about-img-and-socials {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+  margin: 150px 0 0 0;
+}
+
+.about-img-and-socials img {
+  width: 200px;
+  /* border: 1px solid purple; */
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  border-radius: 2px;
+}
+
+.about-section-socials {
+  align-self: center;
+  justify-self: center;
+  margin-top: 10px;
+  /* border: 1px solid black; */
+}
+.about-section-socials a {
+  text-decoration: none;
+}
+
+.about-section-socials button {
+  /* position: relative; */
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 24px;
+  color: var(--dark-grey);
+  text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.about-section-socials button:hover {
+  position: relative;
+  top: 2px;
+  right: 2px;
+  text-shadow: 1px 2px 2px rgba(105, 105, 105, 0.3);
+}
+
+/* .about-message
+    > .about-intro
+    > .about-background
+    > .about-skills
+    > .about-experience
+    > .about-interests
+    > .about-cta
+*/
+/* .about-section {
+  border: 1px solid brown;
 } */
 
-/* About ipad size */
+.about-skills ul li {
+  font-weight: 400;
+  line-height: 1.6;
+  list-style: circle;
+}
+
+.about-experience ul li {
+  font-weight: 400;
+  line-height: 1.6;
+  list-style: circle;
+}
+
+.about-section-sub-title {
+  color: var(--dark-grey);
+  font-weight: 600;
+}
+
+/* ipad size */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -364,7 +459,7 @@ p:nth-child(4) {
     flex-direction: column;
   }
 
-  .welcome-message h1 {
+  .section-title {
     font-size: 2rem;
     margin: auto auto 20px auto;
   }
@@ -372,23 +467,52 @@ p:nth-child(4) {
   .welcome-image img {
     width: 175px;
   }
+
+  /* about section stuff */
+  #about {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .about-message{
+    border: 1px solid red;
+  } */
+
+  .about-img-and-socials {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    justify-self: center;
+    align-self: center;
+  }
 }
 
-/* about phone size */
+/* phone size */
 @media (max-width: 480px) {
   /* Home */
-  .welcome-message h1 {
+  .section-title {
     font-size: 2rem;
   }
 
-  .welcome-message > p {
+  .message-paragraphs {
+    /* or .message-paragraphs*/
     /* border: 1px solid green; */
     max-width: 330px;
   }
 
+  /* Home image */
   .welcome-image img {
     width: 150px;
   }
+  /* About image */
+  .about-img-and-socials img {
+    width: 150px;
+  }
+  /* .about-message{
+    
+  } */
+  /* Remeber to fix centering */
 
   .small-details p {
     font-size: 1rem;
