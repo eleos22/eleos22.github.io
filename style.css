@@ -172,7 +172,7 @@ header {
   display: flex;
   /* border: 1px solid blue; */
   border-bottom: 1px solid aliceblue;
-  margin: 50px 0;
+  /* margin: 50px 0; */
 }
 
 /* 
@@ -326,17 +326,17 @@ p:nth-child(4) {
   /* border: 1px solid red; */
   display: flex;
   border-bottom: 1px solid aliceblue;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 .about-img-and-socials {
-  /* border: 1px solid blue; */
+  /* border: 1px solid green; */
   display: flex;
   flex-direction: column;
   height: fit-content;
   position: sticky;
   top: 90px;
-  margin: 150px 0 0 0;
+  margin: 150px auto;
 }
 
 .about-img-and-socials img {
@@ -385,6 +385,12 @@ p:nth-child(4) {
     > .about-interests
     > .about-cta
 */
+
+.about-message {
+  /* border: 1px solid purple; */
+  margin: auto auto 20px auto;
+}
+
 /* .about-section {
   border: 1px solid brown;
 } */
@@ -404,6 +410,104 @@ p:nth-child(4) {
 .about-section-sub-title {
   color: var(--dark-grey);
   font-weight: 600;
+}
+
+.about-cta p a {
+  color: rgb(0, 102, 255);
+  font-weight: 500;
+}
+
+/* projects section */
+
+#projects {
+  /* border: 1px solid red; */
+  padding: 0 110px;
+}
+
+.projects-message {
+  /* border: 1px solid orange; */
+  display: flex;
+}
+
+.projects-message .section-title {
+  margin: 20px auto;
+}
+
+.projects-subtitle {
+  color: var(--dark-grey);
+  font-weight: 600;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  /* border: 2px solid blue; */
+  gap: 30px;
+}
+
+.personal-projects,
+.class-projects {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid pink; */
+  justify-content: center;
+  align-items: center;
+}
+
+.personal-projects-tiles,
+.class-projects-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  /* border: 1px solid black; */
+  gap: 22px;
+}
+
+.project-tile {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px,
+    rgba(0, 0, 0, 0.1) 0px 7px 13px -3px, rgba(0, 0, 0, 0.1) 0px -3px 0px inset;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 5px;
+}
+
+.project-tile img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.project-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.project-info h4 {
+  margin: 5px 0;
+  color: var(--dark-grey);
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  color: var(--dark-grey);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 5px;
+  background-color: #4682a9;
+  color: var(--white-color);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: var(--body-background-color) 0.3s ease;
+}
+
+.project-link:hover {
+  transform: translateY(-5px);
 }
 
 /* ipad size */
@@ -476,9 +580,9 @@ p:nth-child(4) {
     align-items: center;
   }
 
-  /* .about-message{
-    border: 1px solid red;
-  } */
+  .about-message {
+    margin-top: 30px;
+  }
 
   .about-img-and-socials {
     margin-top: 10px;
@@ -486,11 +590,19 @@ p:nth-child(4) {
     justify-self: center;
     align-self: center;
   }
+
+  /* projects */
+  .projects-container {
+    flex-direction: column;
+  }
+
+  .personal-projects-tiles,
+  .class-projects-tiles {
+    grid-template-columns: repeat(autofill, minmax(200px, 1fr));
+  }
 }
 
 /* work on get in touch butto */
-
-
 
 /* phone size */
 @media (max-width: 480px) {
@@ -520,5 +632,11 @@ p:nth-child(4) {
 
   .small-details p {
     font-size: 1rem;
+  }
+
+  /* projects */
+  .personal-projects-tiles,
+  .class-projects-tiles {
+    grid-template-columns: 1fr;
   }
 }
