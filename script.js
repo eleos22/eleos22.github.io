@@ -1,4 +1,4 @@
-// nav mbar
+// nav bar
 document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.querySelector(".toggle-button");
   const navbarLinks = document.querySelector(".navbar-links");
@@ -30,3 +30,47 @@ document.addEventListener("DOMContentLoaded", () => {
   changeActiveLink();
   window.addEventListener("scroll", changeActiveLink);
 });
+
+// For projects section
+const projects = [
+  {
+    title: "Project Title 1",
+    description:
+      "Brief description of the project. This is a brief summary of what the project does or its purpose.",
+    link: "project-link1.html",
+    image: "/Images/Placeholder_view.png",
+  },
+  {
+    title: "Project Title 2",
+    description:
+      "Brief description of the project. This is a brief summary of what the project does or its purpose.",
+    link: "project-link2.html",
+    image: "/Images/Placeholder_view.png",
+  },
+  {
+    title: "Project Title 3",
+    description:
+      "Brief description of the project. This is a brief summary of what the project does or its purpose.",
+    link: "project-link3.html",
+    image: "/Images/Placeholder_view.png",
+  },
+];
+
+const projectContainer = document.querySelector(".personal-projects-tiles");
+
+projects.forEach((project) => {
+  const projectTile = document.createElement("div");
+  projectTile.classList.add("project-tile");
+
+  projectTile.innerHTML = `
+    <img src="${project.image}" alt="Project Image" />
+    <div class="project-info">
+      <h4>${project.title}</h4>
+      <p>${project.description}</p>
+      <a href="${project.link}" class="project-link">View Project</a>
+    </div>
+  `;
+
+  projectContainer.appendChild(projectTile);
+});
+// End of projects section

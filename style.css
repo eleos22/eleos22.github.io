@@ -29,9 +29,11 @@
   /* link color */
   --lightblue-link: #0066ff;
 
-  --accent1: #;
-  --accent2: #;
-  --accent3: #;
+  --dsaButtonHover: #0041a1;
+  --dsaButton: #0066ffc9;
+
+  --projectLinkHover: #185a8a;
+  --projectLink: #4682a9;
 }
 
 * {
@@ -196,7 +198,6 @@ header {
   right: 0;
 }
 
-
 /* This will set the paragraphs of each section message */
 .message-paragraphs {
   max-width: 500px;
@@ -305,7 +306,7 @@ p:nth-child(4) {
 }
 
 .about-section-socials button:hover {
-  transform: translate(-2px,1px);
+  transform: translate(-2px, 1px);
   text-shadow: 1px 2px 2px rgba(105, 105, 105, 0.3);
 }
 
@@ -314,16 +315,16 @@ p:nth-child(4) {
   margin: auto auto 20px auto;
 }
 
-.about-skills ul li {
-  font-weight: 400;
-  line-height: 1.6;
-  list-style: circle;
-}
-
+.about-skills ul li,
 .about-experience ul li {
   font-weight: 400;
   line-height: 1.6;
-  list-style: circle;
+  list-style: square;
+}
+.about-degrees-certificates ul li {
+  font-weight: 400;
+  line-height: 1.6;
+  list-style-type: "★  ";
 }
 
 .about-experience ul li:nth-child(1)::after {
@@ -347,15 +348,95 @@ p:nth-child(4) {
   text-decoration: none;
 }
 
+.about-cta p a:hover {
+  color: #0041a1;
+}
+
+/* Data Structures and Algorithms */
+#dsa {
+  border-bottom: 1px solid aliceblue;
+  /* border: 1px solid red; */
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.dsa-main {
+  /* border: 1px solid black; */
+  margin: auto;
+}
+
+.dsa-container ul li {
+  font-weight: 400;
+  line-height: 1.6;
+  list-style: circle;
+}
+
+.dsa-container ul li a {
+  color: rgb(8, 8, 8);
+}
+
+.dsa-container ul li a:hover {
+  color: var(--lightblue-link);
+}
+
+.dsa-sub-title {
+  color: var(--dark-grey);
+  font-weight: 600;
+}
+
+/* .dsa-container{
+} */
+
+#dsa .dsa-image {
+  margin: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.dsa-image img {
+  margin: auto;
+  /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px; */
+  width: 200px;
+  /* border-radius: 10px; */
+}
+
+.dsa-button {
+  text-decoration: none;
+}
+.dsa-button button {
+  color: var(--dsaButton);
+  background-color: aliceblue;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid;
+  display: flex;
+  justify-self: flex-end;
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.dsa-button button:hover {
+  color: var(--dsaButtonHover);
+  transform: translate(1px, 2px);
+  box-shadow: none;
+}
+
 /* projects section */
 #projects {
-  padding: 0 110px;
+  padding: 10px 110px 35px 110px;
   border-bottom: 1px solid aliceblue;
-  margin-top: 10px;
+  margin: auto;
 }
 
 .projects-message {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projects-message .section-title {
@@ -365,25 +446,26 @@ p:nth-child(4) {
 .projects-subtitle {
   color: var(--dark-grey);
   font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 18.72px;
 }
 
-.projects-container {
+/* .projects-container {
   display: flex;
   flex-direction: column;
   margin: 0 0 55px 0;
   gap: 30px;
-}
+} */
 
-.personal-projects,
+/* .personal-projects,
 .class-projects {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.personal-projects-tiles,
-.class-projects-tiles {
+.personal-projects-tiles {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
   gap: 20px;
@@ -426,23 +508,22 @@ p:nth-child(4) {
   display: inline-block;
   margin-top: 10px;
   padding: 4px 5px;
-  background-color: #4682a9;
+  background-color: var(--projectLink);
   color: var(--white-color);
   border-radius: 5px;
   text-decoration: none;
 }
 
 .project-link:hover {
-  background-color: #185a8a;
+  background-color: var(--projectLinkHover);
 }
-
 
 .project-tile:hover {
   transform: translateY(-7px);
 }
 
 /* contact section */
-#contact{
+#contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -450,38 +531,36 @@ p:nth-child(4) {
   margin-bottom: 25px;
 }
 
-.contacts-container{
+.contacts-container {
   display: flex;
   flex-direction: column;
 }
 
-.contact-email a{
+.contact-email a {
   color: var(--lightblue-link);
   text-decoration: none;
   font-weight: 500;
   text-shadow: 2px 2px 2px rgba(125, 124, 124, 0.603);
 }
 
-
-
-.contact-email{
+.contact-email {
   transition: transform 0.3s ease;
 }
 
-.contact-email:hover{
-  transform: scale(0.90);
+.contact-email:hover {
+  transform: scale(0.9);
 }
 
-.contact-socials{
+.contact-socials {
   display: flex;
   margin: 10px 0;
 }
 
-.contact-socials a{
+.contact-socials a {
   margin: auto;
 }
 
-.contact-socials button{
+.contact-socials button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -492,22 +571,19 @@ p:nth-child(4) {
   transition: transform 0.3s ease;
 }
 
-.contact-socials button:hover{
-  transform: translate(-2px,1px);
+.contact-socials button:hover {
+  transform: translate(-2px, 1px);
   text-shadow: 1px 2px 2px rgba(105, 105, 105, 0.3);
 }
 
-
 /* footer */
-footer{
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--header-background-color);
   border-top: 1px solid aliceblue;
 }
-
-
 
 /* ipad size */
 @media (max-width: 768px) {
@@ -577,6 +653,11 @@ footer{
     align-items: center;
   }
 
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+  }
+
   .about-message {
     margin-top: 30px;
   }
@@ -586,6 +667,24 @@ footer{
     margin-bottom: 30px;
     justify-self: center;
     align-self: center;
+  }
+
+  /* DSA */
+  #dsa {
+    display: flex;
+    flex-direction: column;
+    padding-top: 35px;
+  }
+
+  .dsa-main {
+    display: inherit;
+    flex-direction: inherit;
+  }
+
+  .dsa-button {
+    display: flex;
+    justify-self: center;
+    padding: 10px 0 25px 0;
   }
 
   /* projects */
@@ -600,7 +699,7 @@ footer{
   }
 
   /* contact */
-  #contact{
+  #contact {
     margin-top: 30px;
   }
 }
@@ -635,7 +734,7 @@ footer{
   }
 
   /* contact */
-  #contact{
+  #contact {
     margin-top: 30px;
   }
 }
