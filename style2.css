@@ -1,0 +1,429 @@
+:root {
+  --backgroundColor: #303030;
+
+  /* Blues */
+  --light-light-blue: #b3e0ff;
+  --lillac: #b6b6ff;
+  --light-blue: #7ec4ff;
+}
+
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-sketch-regular {
+  font-family: "Cabin Sketch", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-sketch-bold {
+  font-family: "Cabin Sketch", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.rampart-one-regular {
+  font-family: "Rampart One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* body styling */
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  font-family: "Cabin Sketch", sans-serif;
+  background-color: rgb(92, 92, 92);
+  color: white;
+}
+
+/* header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--backgroundColor);
+  /* box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1); */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 6px, rgba(0, 0, 0, 0.23) 0px 1px 6px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.logo > h1 {
+  margin: auto;
+}
+
+.logo > h1 > a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.logo > h1 > a:hover {
+  color: var(--light-light-blue);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: auto;
+  padding: 0%;
+}
+
+.navbar-links li {
+  padding: 0 20px;
+  margin-top: 15px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+}
+
+/* 
+  Hover effect for ^ .navbar-links a
+*/
+.navbar-links li a:hover {
+  color: var(--light-light-blue);
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background-color: var(--light-light-blue);
+  transition: width 0.3s ease, right 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 21px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  /* background-color: var(--white-color); */
+  border-radius: 10px;
+}
+
+.wrapper {
+  background-color: var(--backgroundColor);
+}
+
+/* DSA page section: intro */
+#dsa-page-intro {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  margin: auto;
+  /* border: 1px solid white; */
+  padding-bottom: 50px;
+  padding-top: 100px;
+}
+
+.dsa-page-wording-intro {
+  /* border: 1px solid; */
+  height: fit-content;
+  align-self: center;
+}
+
+.dsa-page-title {
+  font-size: 4rem;
+  font-weight: 600;
+  /* border: 1px solid; */
+  margin: auto;
+}
+
+.dsa-page-wording-intro p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+  /* border: 1px solid; */
+  margin: auto;
+}
+/* For the bulb at the end of the paragraph */
+.bulb::after {
+  content: "\f0eb";
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  color: var(--lillac);
+}
+
+.dsa-page-intro-img {
+  /* border: 1px solid blue; */
+  position: relative;
+  display: inline-block;
+}
+
+.dsa-page-intro-img > img {
+  width: 400px;
+  margin: auto;
+  display: block;
+
+  /* clip-path: polygon(
+    50% 14%,
+    86% 34%,
+    96% 47%,
+    96% 58%,
+    88% 70%,
+    71% 79%,
+    45% 82%,
+    12% 71%,
+    4% 51%,
+    24% 14%
+  );
+  -webkit-clip-path: polygon(
+    50% 14%,
+    86% 34%,
+    96% 47%,
+    96% 58%,
+    88% 70%,
+    71% 79%,
+    45% 82%,
+    12% 71%,
+    4% 51%,
+    24% 14%
+  ); */
+}
+
+/* Dsa welcome section styling */
+#dsa-welcome-section {
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.dsa-welcome-section-message {
+  /* border: 1px solid red; */
+  text-align: center;
+  align-self: center;
+  /* border: 1px solid; */
+}
+
+.dsa-welcome-section-message h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  /* border: 1px solid; */
+  width: fit-content;
+  justify-self: center;
+  margin: auto;
+}
+
+.dsa-welcome-section-message p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  /* border: 1px solid; */
+  width: fit-content;
+}
+
+/* .dsa-get-started {
+} */
+
+.dsa-get-started h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* border: 1px solid; */
+  width: fit-content;
+  justify-self: center;
+  padding-top: 50px;
+}
+
+.dsa-get-started ul {
+  /* border: 1px solid; */
+  justify-self: center;
+}
+
+.dsa-get-started ul li {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+  /* border: 1px solid; */
+  width: fit-content;
+  list-style-type: none;
+}
+
+.dsa-get-started ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.dsa-get-started ul li a:hover {
+  text-decoration: none;
+  color: var(--light-blue);
+}
+
+.dsa-link::before {
+  content: "\f35a          ";
+  font-family: "Font Awesome 5 Free";
+  font-size: 1rem;
+  color: var(--light-blue);
+}
+
+/* DSA contact section */
+#dsa-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid; */
+}
+
+#dsa-contact h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  /* border: 1px solid; */
+  width: fit-content;
+  margin: 25px auto;
+}
+
+#dsa-contact p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  /* border: 1px solid; */
+  width: fit-content;
+  margin: 0 auto 20px auto;
+}
+
+.dsa-to-main:link,
+.dsa-to-main:visited {
+  /* background-color: white; */
+  color: var(--light-blue);
+  border: 2px solid var(--light-blue);
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.dsa-to-main:hover,
+.dsa-to-main:active {
+  background-color: var(--light-blue);
+  color: var(--text-color);
+}
+
+.dsa-socials {
+  /* border: 1px solid; */
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  margin: auto;
+}
+
+.dsa-socials i {
+  color: var(--light-blue);
+}
+
+.dsa-socials i:hover,
+.dsa-socials i:active {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Footer: Resources section */
+#dsa-resources {
+  /* border: 1px solid; */
+  margin-top: 50px;
+}
+
+#dsa-resources footer {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* .dsa-resources-title{
+  border: 1px solid;
+} */
+
+.dsa-resources-title > h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.dsa-resources-topics {
+  /* border: 1px solid; */
+  display: flex;
+}
+
+/* .dsa-C-resources{
+  border: 1px solid red;
+}
+
+.dsa-webDev-resources{
+  border: 1px solid green;
+}
+
+.dsa-student-resources{
+  border: 1px solid blue;
+} */
+
+.resource123 {
+  padding: 0 20px;
+}
+
+.resource123 > h5 {
+  font-size: 1rem;
+}
+
+.resource123 ul li {
+  line-height: 1.25;
+}
+
+.resource123 ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.resource123 ul li a:hover,
+.resource123 ul li a:active {
+  text-decoration: none;
+  color: var(--light-blue);
+}
