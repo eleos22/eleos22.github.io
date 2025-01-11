@@ -259,15 +259,18 @@ header {
   width: fit-content;
 }
 
-/* .dsa-get-started {
-} */
+.dsa-get-started {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .dsa-get-started h3 {
   font-size: 1.5rem;
   font-weight: 600;
   /* border: 1px solid; */
   width: fit-content;
-  justify-self: center;
+  /* justify-self: center; */
   padding-top: 50px;
 }
 
@@ -314,6 +317,7 @@ header {
   font-size: 3rem;
   font-weight: 600;
   /* border: 1px solid; */
+  color: var(--text-color);
   width: fit-content;
   margin: 25px auto;
 }
