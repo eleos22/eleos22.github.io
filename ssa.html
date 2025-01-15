@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Simple Sorting Algorithms (SSA) -->
+    <title>Simple Sorting Algorithms</title>
+    <!-- include ssa.css for this page -->
+    <link rel="stylesheet" href="ssa.css" />
+  </head>
+  <body>
+    <a href="/dsaLanding.html">Home</a>
+    <h1>Sorting Algorithms</h1>
+    <p>Select the sorting algorithm you want to run:</p>
+
+    <!-- Dropdown for algorithm selection -->
+    <select id="algorithmSelect">
+      <option value="bubbleSort">Bubble Sort</option>
+      <option value="selectionSort">Selection Sort</option>
+      <option value="insertionSort">Insertion Sort</option>
+    </select>
+
+    <br /><br />
+
+    <!-- Toggle for array type -->
+    <label>
+      <input type="radio" name="arrayType" value="random" checked />
+      Use Random Array
+    </label>
+    <label>
+      <input type="radio" name="arrayType" value="custom" />
+      Use Custom Array
+    </label>
+
+    <br /><br />
+
+    <!-- Input for array size -->
+    <div id="arraySizeContainer">
+      <label for="arraySize">Enter size of the array: </label>
+      <input
+        type="number"
+        id="arraySize"
+        min="1"
+        max="100"
+        placeholder="Enter size"
+      />
+      <!--  -->
+    </div>
+
+    <!-- Input for custom array -->
+    <div id="customArrayContainer" style="display: none">
+      <!-- has style inline -->
+      <label for="customArray"
+        >Enter your custom array (comma-separated):
+      </label>
+      <input type="text" id="customArray" placeholder="e.g., 5,2,9,1,6" />
+    </div>
+
+    <br /><br />
+
+    <button onclick="runSortingAlgorithm()">Run Selected Algorithm</button>
+
+    <!-- Sorting output -->
+    <div id="output"></div>
+
+    <!-- visualization container -->
+    <div id="visualization" style="margin-top: 50px">
+      <h2>Sorting visualization</h2>
+      <div id="visualizer" class="bar-container"></div>
+    </div>
+
+    <script src="ssa.js"></script>
+  </body>
+</html>

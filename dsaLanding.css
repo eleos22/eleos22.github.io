@@ -1,0 +1,574 @@
+/* Comments */
+/* 
+/* Ensure this applies only to the lightbulb */
+/* .bulb::after {
+  content: "\f0eb";
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  color: #FFEA00;
+  display: inline-block;
+  margin-left: 10px; /* Add some space between text and icon */
+/* transition: color 0.3s ease-in-out; Smooth transition */
+/* } */
+
+/* Add hover effect specifically for the bulb */
+/* .bulb:hover::after { */
+/* Change to a different yellow shade or glow */
+/* color: #FFD700;  */
+/* } */
+
+/* */
+
+:root {
+  /* page color */
+  --dsa-wrapper-color: #303030;
+  --dsa-background-color: rgb(92, 92, 92);
+
+  /* Blues */
+  --light-light-blue: #b3e0ff;
+  --lillac: #b6b6ff;
+  --light-blue: #7ec4ff;
+
+  /* White */
+  --white: #f8f9fa;
+}
+
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-sketch-regular {
+  font-family: "Cabin Sketch", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-sketch-bold {
+  font-family: "Cabin Sketch", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.rampart-one-regular {
+  font-family: "Rampart One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* for smooth navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* body styling */
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  font-family: "Cabin Sketch", sans-serif;
+  background-color: var(--dsa-background-color);
+  color: var(--white);
+}
+
+/* header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--dsa-wrapper-color);
+  border-bottom: 2px solid var(--light-blue);
+  box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.199);
+}
+
+.logo > h1 {
+  margin: auto;
+}
+
+.logo > h1 > a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.logo > h1 > a:hover {
+  color: var(--light-light-blue);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: auto;
+  padding: 0%;
+}
+
+.navbar-links li {
+  padding: 0 20px;
+  margin-top: 15px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+}
+
+/* 
+  Hover effect for ^ .navbar-links a
+*/
+.navbar-links li a:hover {
+  color: var(--light-light-blue);
+}
+
+.navbar-links li a.active {
+  font-weight: bold;
+  color: var(--light-blue);
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background-color: var(--light-light-blue);
+  transition: width 0.3s ease, right 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 21px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--light-blue);
+  border-radius: 10px;
+}
+
+.wrapper {
+  background-color: var(--dsa-wrapper-color);
+}
+
+/* DSA page section: intro */
+#dsa-page-intro {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  margin: auto;
+  /* border: 1px solid white; */
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.dsa-page-wording-intro {
+  /* border: 1px solid; */
+  height: fit-content;
+  align-self: center;
+}
+
+.dsa-page-title {
+  font-size: 4rem;
+  font-weight: 600;
+  /* border: 1px solid; */
+  margin: auto;
+}
+
+.dsa-page-wording-intro p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 0.75;
+  /* border: 1px solid; */
+  margin: 10px auto;
+}
+/* For the bulb at the end of the paragraph */
+.bulb::after {
+  content: "\f0eb";
+  font-family: "Font Awesome 5 Free";
+  font-size: 2rem;
+  color: white;
+  display: inline-block; /*Ensures its treated as a stand alone inline block*/
+  margin-left: 10px;
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.bulb:hover::after {
+  color: #ffff33; /* Slightly brighter yellow for the glow */
+  text-shadow: 0 0 5px #ffff33, /* Glow closer to the icon */ 0 0 15px #ffd700,
+    /* Medium glow */ 0 0 25px #ffe554; /* Outer glow */
+}
+
+.dsa-page-intro-img {
+  /* border: 1px solid blue; */
+  position: relative;
+  display: inline-block;
+  padding-top: 25px;
+}
+
+.dsa-page-intro-img > img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+/* Dsa welcome section styling */
+#dsa-welcome-section {
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+.dsa-welcome-section-message {
+  /* border: 1px solid red; */
+  text-align: center;
+  align-self: center;
+  /* border: 1px solid; */
+}
+
+.dsa-welcome-section-message h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  /* border: 1px solid; */
+  width: fit-content;
+  justify-self: center;
+  margin: auto;
+}
+
+.dsa-welcome-section-message p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  /* border: 1px solid; */
+  width: fit-content;
+}
+
+.dsa-get-started {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dsa-get-started h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  /* border: 1px solid; */
+  width: fit-content;
+  /* justify-self: center; */
+  padding-top: 50px;
+}
+
+.dsa-get-started ul {
+  /* border: 1px solid; */
+  justify-self: center;
+}
+
+.dsa-get-started ul li {
+  /* border: 1px solid; */
+  width: fit-content;
+  list-style-type: none;
+}
+
+.dsa-get-started ul li a {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.dsa-get-started ul li a:hover {
+  color: var(--light-blue);
+}
+
+.dsa-link::before {
+  content: "\f35a          ";
+  font-family: "Font Awesome 5 Free";
+  font-size: 1rem;
+  color: var(--light-blue);
+}
+
+/* DSA contact section */
+#dsa-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid; */
+}
+
+#dsa-contact h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  /* border: 1px solid; */
+  color: var(--text-color);
+  width: fit-content;
+  margin: 25px auto;
+}
+
+#dsa-contact p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  /* border: 1px solid; */
+  width: fit-content;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+.dsa-to-main:link,
+.dsa-to-main:visited {
+  /* background-color: white; */
+  color: var(--light-blue);
+  border: 2px solid var(--light-blue);
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dsa-to-main:hover,
+.dsa-to-main:active {
+  background-color: var(--light-blue);
+  color: var(--text-color);
+}
+
+/* DSA socials */
+.dsa-socials {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dsa-socials a button {
+  background: none;
+  border: none;
+}
+
+.fa-brands,
+.fa-regular {
+  color: var(--light-blue);
+  transition: color 0.3s ease-in-out;
+  font-size: 1.25rem;
+}
+
+.fa-brands:hover,
+.fa-regular:hover,
+.fa-brands:active,
+.fa-regular:active {
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Footer: Resources section */
+#dsa-resources {
+  margin-top: 50px;
+}
+
+#dsa-resources footer {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* .dsa-resources-title{
+  border: 1px solid;
+} */
+
+.dsa-resources-title > h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.dsa-resources-topics {
+  /* border: 1px solid; */
+  display: flex;
+}
+
+/* .dsa-C-resources{
+  border: 1px solid red;
+}
+
+.dsa-webDev-resources{
+  border: 1px solid green;
+}
+
+.dsa-student-resources{
+  border: 1px solid blue;
+} */
+
+.resource123 {
+  padding: 0 20px;
+}
+
+.resource123 > h5 {
+  font-size: 1rem;
+}
+
+.resource123 ul li {
+  line-height: 1.25;
+}
+
+.resource123 ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.resource123 ul li a:hover,
+.resource123 ul li a:active {
+  color: var(--light-blue);
+}
+
+/*       */
+/* Media */
+/*       */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--dsa-wrapper-color);
+    width: 100%;
+    position: absolute;
+    top: 75px; /* Adjust based on your header height */
+    left: 0;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid var(--light-blue);
+    box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.199);
+  }
+
+  .navbar-links.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-links li a {
+    font-size: 1.15rem;
+  }
+
+  .toggle-button {
+    display: flex;
+    margin-left: auto; /* Pushes the toggle button to the right */
+  }
+
+  .navbar-links li {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* dsa page intro section */
+
+  .dsa-page-title {
+    font-size: 2.75rem;
+  }
+
+  .dsa-page-wording-intro p {
+    font-size: 21px;
+  }
+
+  .dsa-page-intro-img > img {
+    width: 250px;
+  }
+
+  /* Resources section / footer*/
+  .dsa-resources-title > h4 {
+    font-size: 1.5rem;
+  }
+
+  .resource123 > h5 {
+    font-size: 1.15rem;
+  }
+
+  .resource123 ul li a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 20px;
+  }
+  #dsa-page-intro {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .dsa-page-title {
+    font-size: 2.5rem;
+  }
+
+  .dsa-page-intro-img > img {
+    margin-top: 30px;
+    width: 200px;
+  }
+
+  .dsa-page-wording-intro p {
+    font-size: 18px;
+  }
+
+  #dsa-resources footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dsa-resources-title > h4 {
+    font-size: 1.5rem;
+    /* text-align: center; */
+  }
+
+  .resource123 h5 {
+    font-size: 1.25rem;
+  }
+}
