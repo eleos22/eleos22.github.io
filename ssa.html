@@ -2,72 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Keywords" content="Eleosnel - Portfolio - C++ programming" />
+    <meta name="description" content="Eleosnel's Personal Portfolio Site" />
+    <meta name="author" content="Eleosnel Rincon" />
     <!-- Simple Sorting Algorithms (SSA) -->
     <title>Simple Sorting Algorithms</title>
+    <link rel="icon" href="/Images/favicon-32x32.png" type="image/x-icon" />
     <!-- include ssa.css for this page -->
     <link rel="stylesheet" href="ssa.css" />
+    <script
+      src="https://kit.fontawesome.com/d8f77ce41c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredericka+the+Great&family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <a href="/dsaLanding.html">Home</a>
-    <h1>Sorting Algorithms</h1>
-    <p>Select the sorting algorithm you want to run:</p>
-
-    <!-- Dropdown for algorithm selection -->
-    <select id="algorithmSelect">
-      <option value="bubbleSort">Bubble Sort</option>
-      <option value="selectionSort">Selection Sort</option>
-      <option value="insertionSort">Insertion Sort</option>
-    </select>
-
-    <br /><br />
-
-    <!-- Toggle for array type -->
-    <label>
-      <input type="radio" name="arrayType" value="random" checked />
-      Use Random Array
-    </label>
-    <label>
-      <input type="radio" name="arrayType" value="custom" />
-      Use Custom Array
-    </label>
-
-    <br /><br />
-
-    <!-- Input for array size -->
-    <div id="arraySizeContainer">
-      <label for="arraySize">Enter size of the array: </label>
-      <input
-        type="number"
-        id="arraySize"
-        min="1"
-        max="100"
-        placeholder="Enter size"
-      />
+    <!--        -->
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <h1><a href="/index.html">Eleos</a></h1>
+      </div>
+      <!-- Make sure to place logo here -->
+      <nav class="navbar">
+        <ul class="navbar-links">
+          <li><a href="/dsaLanding.html">Home</a></li>
+        </ul>
+        <a href="#" class="toggle-button" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      </nav>
+    </header>
+    <!--      -->
+    <!-- Main -->
+    <main class="wrapper">
+      <h1 class="ssa-main-title">Simple Sorting Algorithms</h1>
+      <div class="ssa-steps-dropdown">
+        <p onclick="displaySteps()">Notice</p>
+        <!--Don't forget to make it a drop down-->
+        <ul id="ssa-steps">
+          <li>Select sorting algorithm</li>
+          <li>Decide between random or custom array</li>
+          <ul>
+            <li>If random: Array size may not exceed 100 elements</li>
+            <li>If custom: Don't forget to comma separate</li>
+          </ul>
+          <li>Run Algorithm</li>
+        </ul>
+      </div>
       <!--  -->
-    </div>
+      <div class="user-options">
+        <h3>Sorting Algorithm to run:</h3>
+        <!-- Dropdown for algorithm selection -->
+        <select id="algorithmSelect">
+          <option value="bubbleSort">Bubble Sort</option>
+          <option value="selectionSort">Selection Sort</option>
+          <option value="insertionSort">Insertion Sort</option>
+        </select>
+        <!-- Toggle for array type -->
+        <div class="arrayChoice">
+          <label>
+            <input type="radio" name="arrayType" value="random" checked />
+            Use Random Array
+          </label>
+          <label>
+            <input type="radio" name="arrayType" value="custom" />
+            Use Custom Array
+          </label>
+        </div>
 
-    <!-- Input for custom array -->
-    <div id="customArrayContainer" style="display: none">
-      <!-- has style inline -->
-      <label for="customArray"
-        >Enter your custom array (comma-separated):
-      </label>
-      <input type="text" id="customArray" placeholder="e.g., 5,2,9,1,6" />
-    </div>
+        <!-- Input for array size -->
+        <div id="arraySizeContainer">
+          <label for="arraySize">Enter size of the array: </label>
+          <input
+            type="number"
+            id="arraySize"
+            min="1"
+            max="50"
+            placeholder="Enter size"
+          />
+          <!--  -->
+        </div>
 
-    <br /><br />
-
-    <button onclick="runSortingAlgorithm()">Run Selected Algorithm</button>
-
-    <!-- Sorting output -->
-    <div id="output"></div>
-
-    <!-- visualization container -->
-    <div id="visualization" style="margin-top: 50px">
-      <h2>Sorting visualization</h2>
-      <div id="visualizer" class="bar-container"></div>
-    </div>
+        <!-- Input for custom array -->
+        <div id="customArrayContainer" style="display: none">
+          <!-- ^ has style inline -->
+          <label for="customArray"
+            >Enter your custom array (comma-separated):
+          </label>
+          <input type="text" id="customArray" placeholder="e.g., 5,2,9,1,6" />
+        </div>
+        <!--  -->
+        <button onclick="runSortingAlgorithm()" class="runAlgo">Run</button>
+      </div>
+      <!--                -->
+      <!-- Sorting output -->
+      <div id="output"></div>
+      <!--                         -->
+      <!-- visualization container -->
+      <div id="visualization">
+        <h2>Sorting visualization</h2>
+        <div id="visualizer" class="bar-container"></div>
+      </div>
+    </main>
 
     <script src="ssa.js"></script>
   </body>

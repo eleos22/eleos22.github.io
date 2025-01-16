@@ -1,13 +1,341 @@
-.bar {
+:root {
+  /* page color */
+  --dsa-wrapper-color: #303030;
+  --dsa-background-color: rgb(92, 92, 92);
+
+  /* Blues */
+  --light-light-blue: #b3e0ff;
+  --lillac: #b6b6ff;
+  --light-blue: #7ec4ff;
+
+  /* White */
+  --white: #f8f9fa;
+}
+
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-sketch-regular {
+  font-family: "Cabin Sketch", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-sketch-bold {
+  font-family: "Cabin Sketch", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.rampart-one-regular {
+  font-family: "Rampart One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* for smooth navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* body styling */
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  font-family: "Cabin Sketch", sans-serif;
+  background-color: var(--dsa-background-color);
+  color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+/* header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--dsa-wrapper-color);
+  border-bottom: 2px solid var(--lillac);
+  box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.199);
+}
+
+.logo > h1 {
+  margin: auto;
+}
+
+.logo > h1 > a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.logo > h1 > a:hover {
+  color: var(--light-light-blue);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: auto;
+  padding: 0%;
+}
+
+.navbar-links li {
+  padding: 0 20px;
+  margin-top: 15px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+}
+
+/* 
+  Hover effect for ^ .navbar-links a
+*/
+.navbar-links li a:hover {
+  color: var(--light-light-blue);
+}
+
+.navbar-links li a.active {
+  font-weight: bold;
+  color: var(--light-blue);
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background-color: var(--light-light-blue);
+  transition: width 0.3s ease, right 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 21px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--light-blue);
+  border-radius: 10px;
+}
+
+/* Content Wrapper */
+.wrapper {
+  background-color: var(--dsa-wrapper-color);
+  padding-top: 10px;
+  padding: 10px 30px 10px 30px;
+}
+
+/*  */
+.ssa-main-title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+/*  */
+.ssa-steps-dropdown > p {
+  font-size: 1.15rem;
+  cursor: pointer;
+  width: fit-content;
+  border-bottom: 2px solid var(--white);
+  transition: color 0.3s ease-in-out; /* Smooth transition */
+  transition: border-bottom 0.3s ease-in-out; /* Smooth transition */
+  justify-self: center;
+}
+
+.ssa-steps-dropdown > p:hover {
+  color: var(--light-light-blue);
+  border-bottom: 2px solid var(--light-light-blue);
+}
+
+#ssa-steps li {
+  font-size: 1rem;
+}
+
+#ssa-steps {
+  display: none;
+  width: fit-content;
+  justify-self: center;
+}
+
+#ssa-steps.visible {
+  display: block;
+}
+
+/* user-options */
+.user-options {
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid var(--lillac); */
+  justify-self: center;
+}
+
+.user-options h3 {
+  /* border: 1px solid; */
+  width: fit-content;
+  font-size: 1.5rem;
+}
+
+#algorithmSelect {
+  width: fit-content;
+  padding: 2px;
+}
+
+.arrayChoice {
+  /* border: 1px solid; */
+  width: 350px;
+  margin: 20px 0;
+}
+
+.arrayChoice label {
+  margin: 0 10px;
+}
+
+#arraySizeContainer label {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+/* for both random and custom */
+#arraySizeContainer,
+#customArrayContainer {
+  /* border: 1px solid; */
+  margin-bottom: 20px;
+}
+
+#arraySizeContainer input,
+#customArrayContainer input {
+  width: 90px;
+}
+
+/* for button that runs the algorithm on click */
+.runAlgo {
+  border: 2px solid var(--lillac);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--lillac);
+  background: none;
+  padding: 5px 10px;
+  transition: color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  letter-spacing: 2px;
+}
+
+.runAlgo:hover {
+  cursor: pointer;
+  background-color: var(--lillac);
+  color: var(--white);
+}
+
+/* data output */
+#output {
+  /* border: 1px solid; */
+  letter-spacing: 1px;
+  justify-self: center;
+  text-align: center;
+}
+
+#output p {
+  font-size: 1.15rem;
+}
+
+/* start of visualization */
+
+#visualization {
+  margin-top: 50px;
+  padding-bottom: 30px;
+  justify-self: center;
+  width: fit-content;
+}
+
+#visualization h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  width: fit-content;
+  justify-self: center;
+  /* border: 1px solid; */
+}
+
+/* visualizer content */
+.visBar {
   width: 20px;
   display: inline-block;
   margin: 1px;
   background-color: #3498db;
+  box-shadow: 1px -2px 2px rgba(163, 163, 163, 0.24);
 }
 #visualizer {
   display: flex;
-  justify-content: center;
+  justify-self: center;
   align-items: flex-end;
-  height: 200px;
+  height: fit-content;
   width: 100%;
+  max-width: 650px;
+  /* border: 1px solid red; */
+}
+
+/* phone size */
+@media (max-width: 480px) {
+  /* visualizer content */
+  #visualization h2 {
+    align-self: center;
+  }
+
+  .visBar {
+    width: 6px;
+  }
+
+  #visualizer {
+    align-self: center;
+    height: fit-content;
+    width: 100%;
+    max-width: 450px;
+    /* border: 1px solid red; */
+  }
 }
