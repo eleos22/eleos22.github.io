@@ -56,6 +56,7 @@
             <li>If random: Array size may not exceed 50 elements</li>
             <li>If custom: Don't forget to comma separate</li>
           </ul>
+          <li>Only the first 20 unsorted / sorted elements show</li>
           <li>Run Algorithm</li>
         </ul>
       </div>
@@ -113,8 +114,29 @@
         <h2>Sorting visualization</h2>
         <div id="visualizer" class="bar-container"></div>
       </div>
+      <!--      -->
+      <!-- More info on the algorithms -->
+        <!--  -->
+        <div class="algorithm-info">
+          <h2>Learn more about:</h2>
+          <button onclick="showAlgorithmDetails('bubbleSort')">Bubble Sort</button>
+          <button onclick="showAlgorithmDetails('insertionSort')">Insertion Sort</button>
+          <button onclick="showAlgorithmDetails('selectionSort')">Selection Sort</button>
+        
+          <div id="algorithm-details" class="hidden">
+            <h3 id="algorithm-name"></h3>
+            <p id="algorithm-description"></p>
+            <h4>Pseudocode</h4>
+            <pre id="algorithm-pseudocode"></pre>
+            <h4>Source Code</h4>
+            <pre id="algorithm-code"></pre>
+            <h4>Complexity</h4>
+            <ul id="algorithm-complexity"></ul>
+            <h4>Snapshot</h4>
+            <img id="algorithm-snapshot" src="" alt="Algorithm Snapshot" />
+            <button onclick="closeAlgorithmDetails()" id="close-details-btn">Close</button>
+          </div>
     </main>
-
     <script src="ssa.js"></script>
   </body>
 </html>

@@ -222,3 +222,293 @@ async function runSortingAlgorithm() {
     alert(error.message);
   }
 }
+
+//
+//  start of algorithm details js code
+const algorithms = {
+  // bubble sort
+  bubbleSort: {
+    name: "Bubble Sort",
+    description: `Bubble Sort is a simple, comparison-based sorting algorithm.
+     It repeatedly compares adjacent elements and swaps them if they are in the wrong order. This process is repeated until the entire array is sorted.
+       Although easy to implement, Bubble Sort is not efficient for large datasets because of its quadratic time complexity.`,
+    pseudocode: `repeat n-1 times:
+    for i from 0 to n-2:
+        if arr[i] > arr[i+1]:
+            swap(arr[i], arr[i+1])
+    `,
+    code: `#include <iostream>
+using namespace std;
+
+void bubbleSort(int array[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (array[j] > array[j + 1])
+            {
+                int temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int SIZE = 7;
+
+    int array[] = {64, 34, 25, 12, 22, 11, 90};
+
+    cout << "Before Bubble Sort:" << endl;
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << array[i];
+        if (i < SIZE - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+
+    bubbleSort(array, SIZE);
+
+    cout << "After Bubble Sort:" << endl;
+
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << array[i];
+        if (i < SIZE - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+    `,
+    complexity: [
+      "Best-case: O(n) (already sorted)",
+      "Average-case: O(n²)",
+      "Worst-case: O(n²)",
+      "Space complexity: O(1) (in-place)",
+    ],
+    snapshot: "/Images/bbSortCodeSnap.png",
+  },
+  // Selection sort
+  selectionSort: {
+    name: "Selection Sort",
+    description: `Selection Sort is a comparison-based sorting algorithm that repeatedly 
+    selects the smallest (or largest) element from the unsorted part of the array
+     and moves it to the sorted part. It is simple to implement but performs
+      poorly on large lists, as its time complexity is quadratic. It is generally used
+       when memory is limited since it is an in-place sorting algorithm.
+    `,
+    pseudocode: `for i from 0 to n-2:
+        minIndex = i
+        for j from i+1 to n-1:
+          if arr[j] < arr[minIndex]:
+            minIndex = j
+        swap arr[i] with arr[minIndex]
+    `,
+    code: `#include <iostream>
+using namespace std;
+
+// ascending order
+void selectionSort(int array[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        int min_index = i;
+
+        for (int j = i + 1; j < n; j++)
+        {
+            if (array[j] < array[min_index])
+            {
+                min_index = j;
+            }
+        }
+
+        if (min_index != i)
+        {
+            int temp = array[i];
+            array[i] = array[min_index];
+            array[min_index] = temp;
+        }
+    }
+}
+
+int main()
+{
+    int SIZE = 5;
+
+    int array[] = {5, 3, 8, 4, 2};
+
+    cout << "Before sorted array: " << endl;
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << array[i];
+        if (i < SIZE - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+
+    selectionSort(array, SIZE);
+
+    cout << "After sorted array: " << endl;
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << array[i];
+        if (i < SIZE - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}`,
+    complexity: [
+      "Best-case: O(n²)",
+      "Average-case: O(n²)",
+      "Worst-case: O(n²)",
+      "Space complexity: O(1) (in-place)",
+    ],
+    snapshot: "/Images/selectionSortCodeSnap.png",
+  },
+
+  // insertion sort
+  insertionSort: {
+    name: "Insertion Sort",
+    description: `Insertion Sort is a simple and intuitive comparison-based sorting algorithm. 
+    It works similarly to how people often sort playing cards in their hands. 
+  The array is virtually divided into a sorted and an unsorted part. Values
+   from the unsorted part are picked and placed at their correct position in the
+    sorted part. It is efficient for small data sets or when the array is already partially sorted. However, its quadratic time complexity makes it less suitable for large datasets.`,
+    pseudocode: `
+  for i from 1 to n-1:
+      key = arr[i]
+      j = i - 1
+      while j >= 0 and arr[j] > key:
+          arr[j+1] = arr[j]
+          j = j - 1
+      arr[j+1] = key
+    `,
+    code: `
+#include <iostream>
+using namespace std;
+
+void InsertionSort(int array[], int n)
+{
+    for (int i = 1; i < n; i++)
+    {
+        int key = array[i];
+        int j = i - 1;
+
+        while (j >= 0 && array[j] > key)
+        {
+            array[j + 1] = array[j]; 
+            j = j - 1;
+        }
+        array[j + 1] = key;
+    }
+}
+
+int main()
+{
+    int SIZE = 5;
+
+    int array[] = {5, 3, 8, 4, 2};
+
+    cout << "Before sorted array: " << endl;
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << array[i];
+        if (i < SIZE - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+
+    InsertionSort(array, SIZE);
+
+    cout << "After sorted array: " << endl;
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << array[i];
+        if (i < SIZE - 1)
+        {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+    `,
+    complexity: [
+      "Best-case: O(n) (nearly sorted data)",
+      "Average-case: O(n²)",
+      "Worst-case: O(n²)",
+      "Space complexity: O(1) (in-place)",
+    ],
+    snapshot: "/Images/insertionSortCodeSnap.png",
+  },
+};
+
+function scrollToSectionWithOffset(selector, offset = 0) {
+  const element = document.querySelector(selector);
+  if (element) {
+    const elementPosition =
+      element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+}
+
+function showAlgorithmDetails(algorithmKey) {
+  const details = algorithms[algorithmKey];
+  if (!details) return;
+
+  // populate details
+  document.getElementById("algorithm-name").innerText = details.name;
+  document.getElementById("algorithm-description").innerText =
+    details.description;
+  document.getElementById("algorithm-pseudocode").innerText =
+    details.pseudocode;
+  document.getElementById("algorithm-code").innerText = details.code;
+
+  // Populate complexity
+  const complexityList = document.getElementById("algorithm-complexity");
+  complexityList.innerHTML = ""; // Clear existing items
+  details.complexity.forEach((item) => {
+    const li = document.createElement("li");
+    li.innerText = item;
+    complexityList.appendChild(li);
+  });
+
+  // Set snapshot
+  document.getElementById("algorithm-snapshot").src = details.snapshot;
+
+  // scroll to the algorithm info section with header offset
+  scrollToSectionWithOffset(".algorithm-info", 80);
+
+  // Show details
+  document.getElementById("algorithm-details").classList.remove("hidden");
+}
+
+function closeAlgorithmDetails() {
+  document.getElementById("algorithm-details").classList.add("hidden");
+
+  scrollToSectionWithOffset(".algorithm-info", 80);
+}
