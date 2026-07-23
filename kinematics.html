@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Keywords" content="Eleosnel - Portfolio - Physics" />
+    <meta name="description" content="Eleosnel's Personal Portfolio Site" />
+    <meta name="author" content="Eleosnel Rincon" />
+    <title>Kinematics &amp; Projectile Motion</title>
+    <link rel="icon" href="/Images/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/kinematics.css" />
+    <script
+      src="https://kit.fontawesome.com/d8f77ce41c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredericka+the+Great&family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- KaTeX for rendering the math -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1><a href="/index.html">Eleos</a></h1>
+      </div>
+      <nav class="navbar">
+        <ul class="navbar-links">
+          <li><a href="/physicsLanding.html">Home</a></li>
+        </ul>
+        <a href="#" class="toggle-button" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="wrapper">
+      <h1 class="ph-main-title">Kinematics &amp; Projectile Motion</h1>
+      <p class="ph-intro-text">
+        Launch a projectile using 2D equations and watch position, velocity,
+        range, and max height fall right out of the same handful of 1D
+        equations.
+      </p>
+
+      <section class="ph-card">
+        <h2>The equations</h2>
+        <h3>Position X & Y at some time t:</h3>
+        <p class="ph-center-eq">
+          \[ x(t) = v_0 \cos(\theta)\, t \qquad y(t) = v_0 \sin(\theta)\, t -
+          \tfrac{1}{2} g t^2 \]
+        </p>
+        <h3>Horizontal (x) and Vertical (y) Velocities:</h3>
+        <p class="ph-center-eq">
+          \[ v_x(t) = v_0 \cos(\theta) \qquad v_y(t) = v_0 \sin(\theta) - g t \]
+        </p>
+        <h3>Projectile: Time of Flight, Range, and Max Height:</h3>
+        <p class="ph-center-eq">
+          \[ t_{\text{flight}} = \frac{2 v_0 \sin(\theta)}{g} \qquad R =
+          \frac{v_0^2 \sin(2\theta)}{g} \qquad H = \frac{v_0^2
+          \sin^2(\theta)}{2g} \]
+        </p>
+      </section>
+
+      <section class="ph-card ph-interactive">
+        <h2>Interactive: launch it</h2>
+
+        <div class="ph-controls">
+          <label>
+            <span class="ph-control-text"
+              >Initial speed \(v_0\): <span id="v0Val">20</span> m/s</span
+            >
+            <input type="range" id="v0" min="5" max="40" value="20" step="1" />
+          </label>
+          <label>
+            <span class="ph-control-text"
+              >Launch angle \(\theta\): <span id="angleVal">45</span>&deg;</span
+            >
+            <input
+              type="range"
+              id="angle"
+              min="5"
+              max="85"
+              value="45"
+              step="1"
+            />
+          </label>
+        </div>
+
+        <div class="ph-canvas-wrap">
+          <canvas id="trajCanvas" width="640" height="320"></canvas>
+          <button id="launchBtn" class="ph-launch-btn">Launch</button>
+        </div>
+
+        <div id="phReadout" class="ph-readout"></div>
+      </section>
+
+      <section class="ph-card">
+        <h2>1D kinematics, for reference</h2>
+        <p class="ph-center-eq">
+          \[ v = v_0 + at \qquad x = x_0 + v_0 t + \tfrac{1}{2} a t^2 \qquad v^2
+          = v_0^2 + 2a(x - x_0) \]
+        </p>
+        <p>
+          Projectile motion is just these same equations applied separately to
+          the horizontal (\(a = 0\)) and vertical (\(a = -g\)) directions at
+          once &mdash; that's why \(x(t)\) is a straight line while \(y(t)\)
+          traces a parabola above.
+        </p>
+        <h3>Important to know about Velocity:</h3>
+        <p>
+          Velocity has Magnitude and Direction, but Speed only has Magnitude.
+          Implying Velocity is:
+        </p>
+        <ul class="kin-velocity-facts">
+          <li>Positive on way up: \[v = + m/s\]</li>
+          <li>0 at the peak of the parabola: \[v = 0 m/s\]</li>
+          <li>Negative on the way down: \[v = - m/s\]</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./js/kinematics.js"></script>
+  </body>
+</html>

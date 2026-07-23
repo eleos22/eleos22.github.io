@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Keywords" content="Eleosnel - Portfolio - Physics" />
+    <meta name="description" content="Eleosnel's Personal Portfolio Site" />
+    <meta name="author" content="Eleosnel Rincon" />
+    <link rel="stylesheet" href="./css/physicsLanding.css" />
+    <title>Eleosnel's Physics Page</title>
+    <link rel="icon" href="/Images/favicon-32x32.png" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/d8f77ce41c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredericka+the+Great&family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1><a href="/index.html">Eleos</a></h1>
+      </div>
+      <nav class="navbar">
+        <ul class="navbar-links">
+          <li><a href="#physics-page-intro">Home</a></li>
+          <li><a href="#physics-welcome-section">Learn</a></li>
+          <li><a href="#physics-contact">Contact</a></li>
+        </ul>
+        <a href="#" class="toggle-button" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      </nav>
+    </header>
+    <!-- Main -->
+    <main class="wrapper">
+      <!-- Section for title and graphic -->
+      <section id="physics-page-intro">
+        <div class="physics-page-wording-intro">
+          <h1 class="physics-page-title">Physics</h1>
+          <p class="bulb">
+            Motion, forces, and energy <br />
+            shown in motion, not just equations.
+          </p>
+        </div>
+        <div class="physics-page-intro-img">
+          <!-- Hand-coded SVG: a projectile arc -->
+          <svg
+            width="320"
+            height="260"
+            viewBox="0 0 320 260"
+            role="img"
+            aria-label="Projectile trajectory with velocity vector decomposed into horizontal and vertical components"
+          >
+            <defs>
+              <marker
+                id="physIntroArrow"
+                markerWidth="10"
+                markerHeight="10"
+                refX="6"
+                refY="3"
+                orient="auto"
+              >
+                <path d="M0,0 L6,3 L0,6 Z" fill="#ffcb77" />
+              </marker>
+            </defs>
+            <g stroke="#ffffff22" stroke-width="1">
+              <line x1="0" y1="65" x2="320" y2="65" />
+              <line x1="0" y1="130" x2="320" y2="130" />
+              <line x1="0" y1="195" x2="320" y2="195" />
+            </g>
+            <line
+              x1="10"
+              y1="230"
+              x2="310"
+              y2="230"
+              stroke="#f8f9fa66"
+              stroke-width="1.5"
+            />
+            <path
+              d="M 20 230 Q 160 10 300 230"
+              fill="none"
+              stroke="#ffcb77"
+              stroke-width="3"
+            />
+            <circle cx="20" cy="230" r="5" fill="#f8f9fa" />
+            <circle cx="300" cy="230" r="5" fill="#f8f9fa" />
+
+            <!-- ball, sitting on the curve at t = 0.4 -->
+            <circle cx="132" cy="124" r="6" fill="#ffcb77" />
+
+            <!-- velocity vector, tangent to the path at that point -->
+            <line
+              x1="132"
+              y1="124"
+              x2="194"
+              y2="105"
+              stroke="#f8f9fa"
+              stroke-width="2"
+              marker-end="url(#physIntroArrow)"
+            />
+            <text x="197" y="102" fill="#f8f9fa" font-size="15">v</text>
+
+            <!-- horizontal component: v cos(theta) -->
+            <line
+              x1="132"
+              y1="124"
+              x2="194"
+              y2="124"
+              stroke="#7ec4ff"
+              stroke-width="1.5"
+              stroke-dasharray="4,3"
+            />
+            <text x="140" y="140" fill="#7ec4ff" font-size="13">
+              v cos&#952;
+            </text>
+
+            <!-- vertical component: v sin(theta) -->
+            <line
+              x1="194"
+              y1="124"
+              x2="194"
+              y2="105"
+              stroke="#cbb4ff"
+              stroke-width="1.5"
+              stroke-dasharray="4,3"
+            />
+            <text x="199" y="118" fill="#cbb4ff" font-size="13">
+              v sin&#952;
+            </text>
+          </svg>
+        </div>
+      </section>
+      <!-- Welcome Section -->
+      <section id="physics-welcome-section">
+        <div class="physics-welcome-section-message">
+          <h1>WELCOME!</h1>
+          <p>
+            This page is where I turn Physics concepts into something you can
+            play with. <br />
+            I'm starting with kinematics and projectile motion, and plan on
+            adding more in time. <br />
+            Thank you for visiting and I hope this page can be of some use.
+          </p>
+        </div>
+        <div class="physics-get-started">
+          <h3>Get Started</h3>
+          <ul>
+            <li>
+              <a href="/kinematics.html" class="physics-link"
+                >Kinematics &amp; Projectile Motion</a
+              >
+            </li>
+            <li><a href="" class="physics-link">Work &amp; Energy</a></li>
+            <li>
+              <a href="" class="physics-link">Momentum &amp; Collisions</a>
+            </li>
+            <li><a href="" class="physics-link">Circular Motion</a></li>
+          </ul>
+        </div>
+      </section>
+      <section id="physics-contact">
+        <h1>Contact</h1>
+        <p>
+          If you are interested about learning more about me, check out my main
+          portfolio page.
+        </p>
+        <a href="/index.html" class="physics-to-main">MAIN</a>
+        <div class="physics-socials">
+          <a
+            href="https://github.com/eleos22"
+            target="_blank"
+            aria-label="Github"
+            ><button aria-label="Visit Github Profile">
+              <i class="fa-brands fa-github"></i></button
+          ></a>
+          <a
+            href="https://www.instagram.com/eleosnel"
+            target="_blank"
+            aria-label="Instagram"
+            ><button aria-label="Visit Instagram Profile">
+              <i class="fa-brands fa-instagram"></i></button
+          ></a>
+          <a href="mailto:eleosnel@gmail.com" target="_blank" aria-label="email"
+            ><button aria-label="Email Eleosnel">
+              <i class="fa-regular fa-envelope"></i></button
+          ></a>
+        </div>
+      </section>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

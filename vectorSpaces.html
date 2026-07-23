@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Keywords" content="Eleosnel - Portfolio - Linear Algebra" />
+    <meta name="description" content="Eleosnel's Personal Portfolio Site" />
+    <meta name="author" content="Eleosnel Rincon" />
+    <title>Vector Spaces, Span &amp; Determinants</title>
+    <link rel="icon" href="/Images/favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/vectorSpaces.css" />
+    <script
+      src="https://kit.fontawesome.com/d8f77ce41c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredericka+the+Great&family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- KaTeX for rendering the math -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <h1><a href="/index.html">Eleos</a></h1>
+      </div>
+      <nav class="navbar">
+        <ul class="navbar-links">
+          <li><a href="/linearAlgebraLanding.html">Home</a></li>
+        </ul>
+        <a href="#" class="toggle-button" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="wrapper">
+      <h1 class="la-main-title">Vector Spaces, Span &amp; Determinants</h1>
+      <p class="la-intro-text">
+        A vector space is any set that's closed under addition and scalar
+        multiplication. Below, play with two vectors in
+        <span class="katex-inline">\(\mathbb{R}^2\)</span> and watch how their
+        span, linear independence, and determinant are really the same story
+        told three ways.
+      </p>
+
+      <!-- Vector space axioms -->
+      <section class="la-card">
+        <h2>What makes something a vector space?</h2>
+        <p>
+          A set <span class="katex-inline">\(V\)</span> with addition and scalar
+          multiplication is a vector space if, for all
+          <span class="katex-inline">\(u, v, w \in V\)</span> and scalars
+          <span class="katex-inline">\(c, d\)</span>:
+        </p>
+        <ul class="la-axioms">
+          <li>\( u + v \in V \) and \( cu \in V \) (closure)</li>
+          <li>\( u + v = v + u \) (commutative)</li>
+          <li>\( (u + v) + w = u + (v + w) \) (associative)</li>
+          <li>
+            There exists \( \mathbf{0} \in V \) with \( u + \mathbf{0} = u \)
+          </li>
+          <li>
+            Every \( u \) has an inverse \( -u \) with \( u + (-u) = \mathbf{0}
+            \)
+          </li>
+          <li>\( c(u+v) = cu + cv \) and \( (c+d)u = cu + du \)</li>
+        </ul>
+        <h3>Subspace test</h3>
+        <p>A subset \( H \subseteq V \) is a subspace if and only if:</p>
+        <ol class="la-axioms">
+          <li>\( \mathbf{0} \in H \)</li>
+          <li>\( H \) is closed under addition</li>
+          <li>\( H \) is closed under scalar multiplication</li>
+        </ol>
+      </section>
+
+      <!-- Interactive matrix / span / determinant explorer -->
+      <section class="la-card la-interactive">
+        <h2>Interactive: Span, Independence &amp; Determinant</h2>
+        <p>
+          Enter two vectors \( \mathbf{v_1} \) and \( \mathbf{v_2} \) as the
+          columns of a matrix. The canvas shows both vectors and the
+          parallelogram they form &mdash; its area is exactly \( |\det(M)| \).
+        </p>
+
+        <div class="matrix-inputs">
+          <div class="matrix-block">
+            <span class="matrix-bracket">[</span>
+            <div class="matrix-cols">
+              <label
+                >a
+                <input type="number" id="va" value="3" step="0.5" />
+              </label>
+              <label
+                >b
+                <input type="number" id="vb" value="1" step="0.5" />
+              </label>
+              <label
+                >c
+                <input type="number" id="vc" value="1" step="0.5" />
+              </label>
+              <label
+                >d
+                <input type="number" id="vd" value="2" step="0.5" />
+              </label>
+            </div>
+            <span class="matrix-bracket">]</span>
+          </div>
+        </div>
+
+        <div class="la-canvas-wrap">
+          <canvas id="spanCanvas" width="420" height="420"></canvas>
+          <div id="spanReadout" class="la-readout"></div>
+        </div>
+
+        <h3>Change of basis</h3>
+        <p>
+          If \( \{ \mathbf{v_1}, \mathbf{v_2} \} \) is independent, any vector
+          \( \mathbf{t} \) can be written as \( \mathbf{t} = c_1 \mathbf{v_1} +
+          c_2 \mathbf{v_2} \). Enter a target vector to solve for its
+          coordinates \( (c_1, c_2) \) in this basis:
+        </p>
+        <div class="target-inputs">
+          <label
+            >t\(_x\) <input type="number" id="tx" value="4" step="0.5"
+          /></label>
+          <label
+            >t\(_y\) <input type="number" id="ty" value="3" step="0.5"
+          /></label>
+        </div>
+        <div id="coordReadout" class="la-readout"></div>
+      </section>
+
+      <!-- Rank-Nullity worked example -->
+      <section class="la-card">
+        <h2>Rank &amp; Nullity</h2>
+        <p>
+          The Rank-Nullity Theorem says that for an \( m \times n \) matrix \( A
+          \):
+        </p>
+        <p class="la-center-eq">
+          \[ \operatorname{rank}(A) + \operatorname{nullity}(A) = n \]
+        </p>
+        <p>Worked example. Row reduce:</p>
+        <p class="la-center-eq">
+          \[ A = \begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 3 \\ 1 & 2 & 2
+          \end{bmatrix} \;\xrightarrow{R_2 - 2R_1,\; R_3 - R_1}\;
+          \begin{bmatrix} 1 & 2 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 1 \end{bmatrix}
+          \;\xrightarrow{R_3 - R_2}\; \begin{bmatrix} 1 & 2 & 1 \\ 0 & 0 & 1 \\
+          0 & 0 & 0 \end{bmatrix} \]
+        </p>
+        <p>
+          Two nonzero rows remain, so \( \operatorname{rank}(A) = 2 \). With \(
+          n = 3 \) columns, nullity \( = 3 - 2 = 1 \) &mdash; there's a
+          one-dimensional null space, spanned by \( (-2, 1, 0) \) since column 2
+          is a free variable tied to column 1.
+        </p>
+      </section>
+    </main>
+
+    <script src="./js/vectorSpaces.js"></script>
+  </body>
+</html>
